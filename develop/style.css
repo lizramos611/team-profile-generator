@@ -1,0 +1,27 @@
+.header{
+    background-color: salmon;
+    text-align: center;
+    font-size: x-large;
+    color: white;
+    height: 75px;
+    width: auto;
+}
+body{
+    background-color: blanchedalmond;
+}
+.card{
+    border-radius: 5px;
+    background-color: lightskyblue;
+    color: white;
+    
+
+}
+.allcards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
