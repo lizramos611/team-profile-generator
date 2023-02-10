@@ -21,7 +21,7 @@ const managerPrompts = () => {
         {
 
             type: 'input',
-            message: 'What is your first name?',
+            message: 'Manager: What is your first name?',
             name: 'name',
             validate: name => {
                 if (name) {
