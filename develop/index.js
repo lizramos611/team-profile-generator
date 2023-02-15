@@ -13,13 +13,15 @@ const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
 const { type } = require('os');
 
+
+//array that will hold all the team members from the inquirer prompts
 const newTeamArray = [];
 
-
+//prompt questions for manager first
 const managerPrompts = () => {
     return inquirer.prompt ([
         {
-
+//manager name
             type: 'input',
             message: 'Manager: What is your first name?',
             name: 'name',
@@ -32,6 +34,8 @@ const managerPrompts = () => {
                 }
             }
         },
+
+//manager employee id
         {
             type: 'number',
             message: 'What is your employee ID?',
@@ -47,6 +51,7 @@ const managerPrompts = () => {
 
         },
            
+//manager email address
         {
             type: 'input',
             message: 'What is your email address?',
@@ -62,6 +67,8 @@ const managerPrompts = () => {
 
         },
         
+
+//manager office number
         {
             type: 'number',
             message: 'What is your office number?',
@@ -81,6 +88,8 @@ const managerPrompts = () => {
         
     ])
 
+
+//imported manager class that is linked to the inputs from inquirer
     .then(mgrInput => {
         const { name, id, email, officeNumber } = mgrInput;
         const mgr = new Manager (name, id, email, officeNumber);
@@ -88,8 +97,12 @@ const managerPrompts = () => {
     })
 }
 
+
+//intern or engingeer prompts
 const newEmployeeprompts = () => {
 return inquirer.prompt([
+
+//selection for eningeer or intern
     {
         type: 'list',
         message: 'What is your role?',
@@ -105,6 +118,8 @@ return inquirer.prompt([
         }
     },
     
+
+//first name for engineer/ intern
     {
 
         type: 'input',
@@ -119,6 +134,8 @@ return inquirer.prompt([
             }
         }
     },
+
+//employee id for engineer/intern
     {
         type: 'number',
         message: 'What is your employee ID?',
@@ -134,6 +151,8 @@ return inquirer.prompt([
 
     },
        
+
+//email address for engineer/ intern
     {
         type: 'input',
         message: 'What is your email address?',
@@ -149,6 +168,7 @@ return inquirer.prompt([
 
     },
 
+    //if intern selected, it will ask the school name
     {
         when: (input) => input.role === 'Intern',
         type: 'input',
@@ -163,6 +183,8 @@ return inquirer.prompt([
             }
         }
     },
+
+//if engineer selected, it will ask for their github username
     {
         when: (input) => input.role === 'Engineer',
         type: 'input',
@@ -178,7 +200,7 @@ return inquirer.prompt([
         }
     },
 
-
+//confirm whether or not to add more team members
     {
         type: 'confirm',
         message:'Do you need to add more team members at this time?',
