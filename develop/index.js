@@ -102,7 +102,7 @@ const managerPrompts = () => {
 const newEmployeeprompts = () => {
 return inquirer.prompt([
 
-//selection for eningeer or intern
+//selection for engineer or intern
     {
         type: 'list',
         message: 'What is your role?',
