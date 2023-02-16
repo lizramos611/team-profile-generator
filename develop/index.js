@@ -230,6 +230,8 @@ return inquirer.prompt([
     }
 })
 };
+
+//creating and generating the new HTML page
 const writeFile = data => {
     fs.writeFile("./src/index.html", data, err => {
         if (err) {
