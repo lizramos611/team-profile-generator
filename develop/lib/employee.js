@@ -1,3 +1,5 @@
+//employee constructor to link to all pages
+
 class Employee {
     constructor(name, id, email){
         this.name = name;

@@ -1,3 +1,6 @@
+//tests for managers
+
+
 const Manager = require('../lib/manager.js');
 
 test('manager role should be returned', () => {

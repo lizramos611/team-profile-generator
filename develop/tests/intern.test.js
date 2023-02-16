@@ -1,3 +1,5 @@
+//tests for interns
+
 const Intern = require('../lib/intern.js');
 
 test('intern role should be returned', () => {

@@ -1,3 +1,6 @@
+//engineer constructor connected to the employee page
+
+
 const Employee = require('./employee');
 
 class Engineer extends Employee{

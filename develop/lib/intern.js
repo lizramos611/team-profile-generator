@@ -1,3 +1,6 @@
+//intern page connected to the employee page
+
+
 const Employee = require('./employee');
 
 class Intern extends Employee{

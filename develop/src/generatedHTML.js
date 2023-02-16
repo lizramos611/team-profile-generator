@@ -1,5 +1,7 @@
 
+//function to generate and connect the user input with temperate literals
 
+//manager section and data pulled from user input
 const createManager = function (manager) {
     return `
    
@@ -19,7 +21,7 @@ const createManager = function (manager) {
     `;
 }
 
-
+//engineer data from user input
 const createEngineer = function (engineer) {
     return `
     <div class="card" style="width: 18rem;">
@@ -39,6 +41,9 @@ const createEngineer = function (engineer) {
     `
 }
 
+
+
+//intern data from user input
 const createIntern = function (intern) {
     return `
     <div class="card" style="width: 18rem;">
@@ -58,6 +63,8 @@ const createIntern = function (intern) {
     `
 }
 
+
+//taking the data from the html page and running a loop to gather all roles
 generateHTML = (data) =>{
 
     htmlPage = [];
@@ -86,14 +93,14 @@ generateHTML = (data) =>{
             htmlPage.push(Manager);
         }
     }
-
+//putting all the data from user input together to generate on the html page
     const employeePage = htmlPage.join('');
 
     const generatedTeam = createTeam(employeePage);
     return generatedTeam;
 
 }
-
+//entire page generated for new HTMl 
 const createTeam = function (employeePage) {
     return`
     <html lang="en">
@@ -124,5 +131,7 @@ const createTeam = function (employeePage) {
     
     `;
 }
+
+//importing the html page
 
 module.exports = generateHTML;
