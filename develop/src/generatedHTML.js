@@ -20,7 +20,7 @@ const createManager = function (manager) {
 }
 
 
-const creatEngingeer = function (engineer) {
+const createEngineer = function (engineer) {
     return `
     <div class="card" style="width: 18rem;">
         <div class="card-body">
