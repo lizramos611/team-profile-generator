@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 //import generated html file to link two files
-const generateHTML = require('./src/generatedHTML.html');
+const generateHTML = require('./src/generatedHTML.js');
 
 
 //importing all employee libraries with classes
@@ -90,10 +90,10 @@ const managerPrompts = () => {
 
 
 //imported manager class that is linked to the inputs from inquirer
-    .then(mgrInput => {
-        const { name, id, email, officeNumber } = mgrInput;
-        const mgr = new Manager (name, id, email, officeNumber);
-        newTeamArray.push(mgr);
+    .then(managerInput => {
+        const { name, id, email, officeNumber } = managerInput;
+        const manager = new Manager (name, id, email, officeNumber);
+        newTeamArray.push(manager);
     })
 }
 
@@ -213,10 +213,40 @@ return inquirer.prompt([
     let { name, id, email, role, school, github, added} = input;
     let employee;
 
-    if (role === 'Intern')
+    if (role === 'Intern') {
+        employee = new Intern (name, id, email, school);
+    }
+    if (role === 'Engingeer') {
+        employee = new Engineer (name, id, email, github);
+    }
+    newTeamArray.push(employee);
+    if (added) 
+    {
+        return newEmployeeprompts(newTeamArray);
+
+    }
+    else {
+        return newTeamArray;
+    }
 })
 };
+const writeFile = data => {
+    fs.writeFile("./src/index.html", data, err => {
+        if (err) {
+            console.error(err)
+        }
+        else {
+            console.log("Success!")
+        }
+    })};
+
 
 managerPrompts()
-.then(newEmployeeprompts);
+.then(newEmployeeprompts)
+.then(function(newTeamArray){
+    return generateHTML(newTeamArray)
 
+})
+.then(function(html){
+    return writeFile(html);
+})
