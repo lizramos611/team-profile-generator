@@ -37,9 +37,9 @@ const managerPrompts = () => {
 
 //manager employee id
         {
-            type: 'number',
+            type: 'input',
             message: 'What is your employee ID?',
-            name: 'employee',
+            name: 'id',
             validate: id => {
                 if (id) {
                     return true;
@@ -70,11 +70,11 @@ const managerPrompts = () => {
 
 //manager office number
         {
-            type: 'number',
+            type: 'input',
             message: 'What is your office number?',
-            name: 'office',
-            validate: office => {
-                if (office) {
+            name: 'officeNumber',
+            validate: officeNumber => {
+                if (officeNumber) {
                     return true;
                 } else {
                     console.log("please enter your office number to continue!");
@@ -137,9 +137,9 @@ return inquirer.prompt([
 
 //employee id for engineer/intern
     {
-        type: 'number',
+        type: 'input',
         message: 'What is your employee ID?',
-        name: 'employee',
+        name: 'id',
         validate: id => {
             if (id) {
                 return true;
@@ -170,7 +170,7 @@ return inquirer.prompt([
 
     //if intern selected, it will ask the school name
     {
-        when: (input) => input.role === 'Intern',
+        when: (input) => input.role == 'Intern',
         type: 'input',
         message: 'What is your school name?',
         name: 'school',
@@ -186,7 +186,7 @@ return inquirer.prompt([
 
 //if engineer selected, it will ask for their github username
     {
-        when: (input) => input.role === 'Engineer',
+        when: (input) => input.role == 'Engineer',
         type: 'input',
         message: 'What is your Github username?',
         name: 'github',

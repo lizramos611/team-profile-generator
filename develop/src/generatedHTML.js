@@ -5,8 +5,8 @@ const createManager = function (manager) {
    
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">name</h5>
-              <p class="card-text">${manager.name}</p>
+              <h5 class="card-title">${manager.name}</h5>
+              <p class="card-text"> ${manager.getRole()}</p>
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">id: ${manager.id}</li>
@@ -25,12 +25,12 @@ const creatEngingeer = function (engineer) {
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">${engineer.name}</h5>
-          <p class="card-text">job </p>
+          <p class="card-text">${engineer.getRole()} </p>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">id: ${engineer.id}</li>
           <li class="list-group-item">email: ${engineer.email}</li>
-          <li class="list-group-item">github: ${engineer.github}</li>
+          <li class="list-group-item">github: ${engineer.getGithub()}</li>
         </ul>
         <div class="card-body">
         </div>
@@ -44,12 +44,12 @@ const createIntern = function (intern) {
     <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">${intern.name}</h5>
-          <p class="card-text">job </p>
+          <p class="card-text">${intern.getRole()} </p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">id: ${inter.id}</li>
+          <li class="list-group-item">id: ${intern.id}</li>
           <li class="list-group-item">email: ${intern.email}</li>
-          <li class="list-group-item">school: ${intern.school}</li>
+          <li class="list-group-item">school: ${intern.getSchool()}</li>
         </ul>
         <div class="card-body">
         </div>
@@ -75,13 +75,13 @@ generateHTML = (data) =>{
 
         if (role === 'Engineer') {
             const Engineer = createEngineer(employee);
-            htmlPage.push (employee);
+            htmlPage.push(Engineer);
         }
 
         if (role === 'Manager') {
             const Manager = createManager(employee);
 
-            htmlPage.push(employee);
+            htmlPage.push(Manager);
         }
     }
 
@@ -122,5 +122,5 @@ const createTeam = function (employeePage) {
     
     `;
 }
-createManager()
+
 module.exports = generateHTML;
