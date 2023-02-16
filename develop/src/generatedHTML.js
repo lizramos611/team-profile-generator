@@ -64,6 +64,7 @@ generateHTML = (data) =>{
 
     for(let i = 0; i < data.length; i++){
         const employee = data[i];
+        console.log(employee.getRole());
         const role = employee.getRole();
         
 
@@ -75,6 +76,7 @@ generateHTML = (data) =>{
 
         if (role === 'Engineer') {
             const Engineer = createEngineer(employee);
+            
             htmlPage.push(Engineer);
         }
 

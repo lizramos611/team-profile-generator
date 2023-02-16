@@ -8,7 +8,7 @@ const generateHTML = require('./src/generatedHTML.js');
 
 //importing all employee libraries with classes
 const Employee = require("./lib/employee");
-const Engineer = require("./lib/engingeer");
+const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Manager = require("./lib/manager");
 const { type } = require('os');
@@ -216,7 +216,7 @@ return inquirer.prompt([
     if (role === 'Intern') {
         employee = new Intern (name, id, email, school);
     }
-    if (role === 'Engingeer') {
+    if (role === 'Engineer') {
         employee = new Engineer (name, id, email, github);
     }
     newTeamArray.push(employee);
@@ -244,7 +244,7 @@ const writeFile = data => {
 managerPrompts()
 .then(newEmployeeprompts)
 .then(function(newTeamArray){
-    return generateHTML(newTeamArray)
+    return generateHTML(newTeamArray);
 
 })
 .then(function(html){
