@@ -30,7 +30,7 @@ const createEngineer = function (engineer) {
         <ul class="list-group list-group-flush">
           <li class="list-group-item">id: ${engineer.id}</li>
           <li class="list-group-item">email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-          <li class="list-group-item">github:<a href="www.github.com/"${engineer.getGithub()}"> ${engineer.getGithub()} </a></li>
+          <li class="list-group-item">github:<a href="https://github.com/"${engineer.getGithub()}"> ${engineer.getGithub()} </a></li>
         </ul>
         <div class="card-body">
         </div>
