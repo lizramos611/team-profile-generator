@@ -10,7 +10,7 @@ const createManager = function (manager) {
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">id: ${manager.id}</li>
-              <li class="list-group-item">email: ${manager.email}</li>
+              <li class="list-group-item">email:<a href="mailto:${manager.email}"> ${manager.email}</a></li>
               <li class="list-group-item">office number: ${manager.officeNumber}</li>
             </ul>
             <div class="card-body">
@@ -29,8 +29,8 @@ const createEngineer = function (engineer) {
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">id: ${engineer.id}</li>
-          <li class="list-group-item">email: ${engineer.email}</li>
-          <li class="list-group-item">github: ${engineer.getGithub()}</li>
+          <li class="list-group-item">email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+          <li class="list-group-item">github:<a href="www.github.com/"${engineer.getGithub()}"> ${engineer.getGithub()} </a></li>
         </ul>
         <div class="card-body">
         </div>
@@ -48,7 +48,7 @@ const createIntern = function (intern) {
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">id: ${intern.id}</li>
-          <li class="list-group-item">email: ${intern.email}</li>
+          <li class="list-group-item">email: <a href="mailto:${intern.email}">${intern.email}</a></li>
           <li class="list-group-item">school: ${intern.getSchool()}</li>
         </ul>
         <div class="card-body">
